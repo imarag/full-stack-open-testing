@@ -1,6 +1,7 @@
 const express = require("express")
 var morgan = require('morgan')
 const cors = require("cors")
+
 const app = express()
 const port = 3000
 
@@ -20,6 +21,7 @@ app.use(cors({
     origin: '*', // allow all origins
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'] // allow all common HTTP methods
 }))
+app.use(express.static('dist'))
 
 let persons = [
     {
